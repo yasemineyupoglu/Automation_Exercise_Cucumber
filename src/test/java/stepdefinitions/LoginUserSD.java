@@ -59,4 +59,9 @@ public class LoginUserSD {
             System.out.println("Your email or password is correct!");
         }
     }
+
+    @Then("click logout button")
+    public void clickLogoutButton() {
+        element.logoutButton.click();
+    }
 }

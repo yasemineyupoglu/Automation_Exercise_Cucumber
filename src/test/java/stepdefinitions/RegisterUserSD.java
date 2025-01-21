@@ -154,4 +154,14 @@ public class RegisterUserSD {
     public void clickCreateAccountButton() {
         element.createAccountButton.click();
     }
+
+    @Then("verify error email address already exist is visible")
+    public void verifyErrorEmailAddressAlreadyExistIsVisible() {
+        if(element.existingEmailText.isDisplayed()){
+            System.out.println("Email Address already exist!");
+        }
+        else {
+            System.out.println("You can register");
+        }
+    }
 }

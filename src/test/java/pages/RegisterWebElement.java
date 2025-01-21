@@ -82,4 +82,7 @@ public class RegisterWebElement {
 
     @FindBy(xpath = "//button[@data-qa='create-account']")
     public WebElement createAccountButton;
+
+    @FindBy(xpath = "//div/div/form/p[text()='Email Address already exist!']")
+    public WebElement existingEmailText;
 }

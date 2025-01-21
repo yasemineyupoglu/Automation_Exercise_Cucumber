@@ -28,4 +28,7 @@ public class LoginWebElement {
 
     @FindBy(xpath = "//div/form/p[text()='Your email or password is incorrect!']")
     public WebElement accountIncorrectLoginText;
+
+    @FindBy(xpath = "//div//div/ul/li/a[text()=' Logout']")
+    public WebElement logoutButton;
 }
