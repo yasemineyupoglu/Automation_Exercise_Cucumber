@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class PagesWebElement {
+public class RegisterWebElement {
 
-    public PagesWebElement(){
+    public RegisterWebElement(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

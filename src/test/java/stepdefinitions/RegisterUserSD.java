@@ -3,16 +3,14 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pages.PagesWebElement;
+import pages.RegisterWebElement;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import javax.swing.*;
+public class RegisterUserSD {
 
-public class tc01_register_user_SD {
-
-    PagesWebElement element = new PagesWebElement();
+    RegisterWebElement element = new RegisterWebElement();
 
     @Given("launch browser and navigate to url")
     public void launchBrowserAndNavigateToUrl() {
@@ -157,5 +155,3 @@ public class tc01_register_user_SD {
         element.createAccountButton.click();
     }
 }
-
-
