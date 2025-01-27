@@ -11,6 +11,7 @@ public class LoginWebElement {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    //TC02_correct_login_user
     @FindBy(xpath = "//div//div//h2[text()='Login to your account']")
     public WebElement loginYourAccountText;
 
@@ -26,9 +27,11 @@ public class LoginWebElement {
     @FindBy(xpath = "//div/div/ul/li/a[text()=' Logged in as ']")
     public WebElement accountLoginText;
 
+    //TC03_incorrect_login_user
     @FindBy(xpath = "//div/form/p[text()='Your email or password is incorrect!']")
     public WebElement accountIncorrectLoginText;
 
+    //TC04_logout_user
     @FindBy(xpath = "//div//div/ul/li/a[text()=' Logout']")
     public WebElement logoutButton;
 }

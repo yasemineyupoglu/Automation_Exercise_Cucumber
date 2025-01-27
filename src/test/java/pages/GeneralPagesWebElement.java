@@ -10,6 +10,7 @@ public class GeneralPagesWebElement {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    //TC06_contact_us_pages
     @FindBy(xpath = "//div//div/ul/li/a[text()=' Contact us']")
     public WebElement contactUsButton;
 
@@ -36,5 +37,12 @@ public class GeneralPagesWebElement {
 
     @FindBy(xpath = "//div[@class='status alert alert-success']")
     public WebElement contactUsSuccessText;
+
+    //TC07_verify_test_cases_page
+    @FindBy(xpath = "//div/div/ul/li/a[text()=' Test Cases']")
+    public WebElement testCasesPage;
+
+    @FindBy(xpath = "//div/div/h2/b[text()='Test Cases']")
+    public WebElement testCasesText;
 
 }

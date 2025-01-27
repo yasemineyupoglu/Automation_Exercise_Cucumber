@@ -17,3 +17,10 @@ Feature: General Pages
     Examples:
       | contact name | contact email        | contact subject | contact message      | contact file                                                                          |
       | Test         | testy006@hotmail.com | Test            | for testing purposes | C:\Users\YaseminEYUPOGLU\Yasemin\Dosyalarım\Proje\Selenium_Cucumber_Ornekler\test.txt |
+
+
+    @test_cases_pages
+    Scenario: TC07_verify_test_cases_page
+      Given launch browser and navigate to url
+      And click on test cases button
+      Then verify test cases is visible

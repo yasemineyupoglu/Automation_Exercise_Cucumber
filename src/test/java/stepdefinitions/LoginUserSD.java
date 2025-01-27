@@ -9,6 +9,7 @@ public class LoginUserSD {
 
     LoginWebElement element = new LoginWebElement();
 
+    //TC02_correct_login_user
     @And("verify login to your account is visible")
     public void verifyLoginToYourAccountIsVisible() {
         ReusableMethods.sleep(1000);
@@ -48,6 +49,7 @@ public class LoginUserSD {
         }
     }
 
+    //TC03_incorrect_login_user
     @Then("verify error your email or password is incorrect is visible")
     public void verifyErrorYourEmailOrPasswordIsIncorrectIsVisible() {
         ReusableMethods.sleep(1000);
@@ -60,6 +62,7 @@ public class LoginUserSD {
         }
     }
 
+    //TC04_logout_user
     @Then("click logout button")
     public void clickLogoutButton() {
         element.logoutButton.click();

@@ -12,6 +12,7 @@ public class RegisterUserSD {
 
     RegisterWebElement element = new RegisterWebElement();
 
+    //TC01_register_user
     @Given("launch browser and navigate to url")
     public void launchBrowserAndNavigateToUrl() {
         Driver.getDriver().get(ConfigurationReader.getProperty("website_url"));
@@ -155,6 +156,7 @@ public class RegisterUserSD {
         element.createAccountButton.click();
     }
 
+    //TC05_register_user_with_existing_email
     @Then("verify error email address already exist is visible")
     public void verifyErrorEmailAddressAlreadyExistIsVisible() {
         if(element.existingEmailText.isDisplayed()){

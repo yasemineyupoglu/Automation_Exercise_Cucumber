@@ -12,6 +12,7 @@ public class GeneralPagesSD {
 
     GeneralPagesWebElement element = new GeneralPagesWebElement();
 
+    //TC06_contact_us_pages
     @Given("click on contact us button")
     public void clickOnContactUsButton() {
         ReusableMethods.sleep(1000);
@@ -84,4 +85,24 @@ public class GeneralPagesSD {
             System.out.println("Success! Your details have been submitted successfully text is not visible");
         }
     }
+
+    //TC07_verify_test_cases_page
+    @And("click on test cases button")
+    public void clickOnTestCasesButton() {
+        ReusableMethods.sleep(1000);
+        element.testCasesPage.click();
+    }
+
+    @Then("verify test cases is visible")
+    public void verifyTestCasesIsVisible() {
+        ReusableMethods.sleep(1000);
+
+        if(element.testCasesText.isDisplayed()){
+            System.out.println("Test cases pages is visible");
+        }
+        else {
+            System.out.println("Test cases pages is not visible");
+        }
+    }
+
 }

@@ -11,6 +11,7 @@ public class RegisterWebElement {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    //TC01_register_user
     @FindBy(xpath = "//div//div//ul//li//a[text()=' Signup / Login']")
     public WebElement signupLoginButton;
 
@@ -83,6 +84,7 @@ public class RegisterWebElement {
     @FindBy(xpath = "//button[@data-qa='create-account']")
     public WebElement createAccountButton;
 
+    //TC05_register_user_with_existing_email
     @FindBy(xpath = "//div/div/form/p[text()='Email Address already exist!']")
     public WebElement existingEmailText;
 }
