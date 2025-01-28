@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class GeneralPagesWebElement {
     public GeneralPagesWebElement(){
         PageFactory.initElements(Driver.getDriver(), this);
@@ -45,4 +47,40 @@ public class GeneralPagesWebElement {
     @FindBy(xpath = "//div/div/h2/b[text()='Test Cases']")
     public WebElement testCasesText;
 
+    //TC08_verify_products_page
+    @FindBy(xpath = "//div/div/ul/li/a[text()=' Products']")
+    public WebElement productsPage;
+
+    @FindBy(xpath = "//div/div/h2[text()='All Products']")
+    public WebElement allProductsText;
+
+    //TC09_verify_search_products_page
+    @FindBy(xpath = "//input[@id='search_product']")
+    public WebElement searchProducts;
+
+    @FindBy(xpath = "//button[@id='submit_search']")
+    public WebElement searchProductsButton;
+
+    @FindBy(xpath = "//div/div/h2[text()='Searched Products']")
+    public WebElement searchProductsText;
+
+    @FindBy(xpath = "//div/div[@class='product-image-wrapper']")
+    public List<WebElement> searchProductsAllSize;
+
+    //TC10_verify_subscription_in_home_page
+    @FindBy(xpath = "//div/div/h2[text()='Subscription']")
+    public WebElement homePageSubscriptionText;
+
+    @FindBy(id = "susbscribe_email")
+    public WebElement homePageSubscription;
+
+    @FindBy(xpath = "//button[@id='subscribe']")
+    public WebElement homePageSubscriptionButton;
+
+    @FindBy(xpath = "//div/div[text()='You have been successfully subscribed!']")
+    public WebElement homePageSubscriptionSuccessText;
+
+    //TC11_verify_subscription_in_cart_page
+    @FindBy(xpath = "//div/div/ul/li/a[text()=' Cart']")
+    public WebElement cartPage;
 }

@@ -4,9 +4,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import pages.GeneralPagesWebElement;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.util.List;
 
 public class GeneralPagesSD {
 
@@ -23,10 +27,9 @@ public class GeneralPagesSD {
     public void verifyGetInTouchIsVisible() {
         ReusableMethods.sleep(1000);
 
-        if(element.getInTouchText.isDisplayed()){
+        if (element.getInTouchText.isDisplayed()) {
             System.out.println("Get In Touch text is visible");
-        }
-        else {
+        } else {
             System.out.println("Get In Touch text is not visible");
         }
     }
@@ -78,10 +81,9 @@ public class GeneralPagesSD {
     public void verifySuccessMessageSuccessYourDetailsHaveBeenSubmittedSuccessfullyIsVisible() {
         ReusableMethods.sleep(1000);
 
-        if(element.contactUsSuccessText.isDisplayed()){
+        if (element.contactUsSuccessText.isDisplayed()) {
             System.out.println("Success! Your details have been submitted successfully text is visible");
-        }
-        else {
+        } else {
             System.out.println("Success! Your details have been submitted successfully text is not visible");
         }
     }
@@ -97,12 +99,96 @@ public class GeneralPagesSD {
     public void verifyTestCasesIsVisible() {
         ReusableMethods.sleep(1000);
 
-        if(element.testCasesText.isDisplayed()){
+        if (element.testCasesText.isDisplayed()) {
             System.out.println("Test cases pages is visible");
-        }
-        else {
+        } else {
             System.out.println("Test cases pages is not visible");
         }
     }
 
+    //TC08_verify_products_page
+    @And("click on products button")
+    public void clickOnProductsButton() {
+        ReusableMethods.sleep(1000);
+        element.productsPage.click();
+    }
+
+    @Then("verify products is visible")
+    public void verifyProductsIsVisible() {
+        ReusableMethods.sleep(1000);
+
+        if (element.allProductsText.isDisplayed()) {
+            System.out.println("All Products text is visible");
+        } else {
+            System.out.println("All Products text is not visible");
+        }
+    }
+
+    //TC09_verify_search_products_page
+    @And("enter {string} in search input and click search button")
+    public void enterInSearchInputAndClickSearchButton(String str) {
+        element.searchProducts.sendKeys(str);
+        element.searchProductsButton.click();
+    }
+
+    @And("verify searched products is visible")
+    public void verifySearchedProductsIsVisible() {
+        ReusableMethods.sleep(1000);
+
+        if (element.searchProductsText.isDisplayed()) {
+            System.out.println("Search Products text is visible");
+        } else {
+            System.out.println("Search Products text is not visible");
+        }
+    }
+
+    @Then("verify all the products related to search are visible")
+    public void verifyAllTheProductsRelatedToSearchAreVisible() {
+        try {
+            List<WebElement> products = element.searchProductsAllSize;
+            System.out.println("Sayfadaki ürün sayısı: " + products.size());
+        } catch (Exception e) {
+            System.out.println("Ürünler bulunamadı.");
+        }
+    }
+    //TC10_verify_subscription_in_home_page
+    @And("scroll down to footer")
+    public void scrollDownToFooter() {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+
+    @And("verify text subscription")
+    public void verifyTextSubscription() {
+        ReusableMethods.sleep(1000);
+
+        if (element.homePageSubscriptionText.isDisplayed()) {
+            System.out.println("Subscription text is visible");
+        } else {
+            System.out.println("Subscription text is not visible");
+        }
+    }
+
+    @And("enter {string} in input and click arrow button")
+    public void enterInInputAndClickArrowButton(String str) {
+        element.homePageSubscription.sendKeys(str);
+        element.homePageSubscriptionButton.click();
+    }
+
+    @Then("verify success message you have been successfully subscribed is visible")
+    public void verifySuccessMessageYouHaveBeenSuccessfullySubscribedIsVisible() {
+        ReusableMethods.sleep(1000);
+
+        if (element.homePageSubscriptionSuccessText.isDisplayed()) {
+            System.out.println("Success subscription text is visible");
+        } else {
+            System.out.println("Success subscription text is not visible");
+        }
+    }
+
+    //TC11_verify_subscription_in_cart_page
+    @And("click cart button")
+    public void clickCartButton() {
+        element.cartPage.click();
+    }
 }
