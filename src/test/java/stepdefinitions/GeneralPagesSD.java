@@ -146,9 +146,9 @@ public class GeneralPagesSD {
     public void verifyAllTheProductsRelatedToSearchAreVisible() {
         try {
             List<WebElement> products = element.searchProductsAllSize;
-            System.out.println("Sayfadaki ürün sayısı: " + products.size());
+            System.out.println("List of products on the page: " + products.size());
         } catch (Exception e) {
-            System.out.println("Ürünler bulunamadı.");
+            System.out.println("No products found.");
         }
     }
     //TC10_verify_subscription_in_home_page
