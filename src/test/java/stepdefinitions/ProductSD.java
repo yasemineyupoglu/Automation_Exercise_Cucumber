@@ -89,4 +89,22 @@ public class ProductSD {
 
         System.out.println("The sum of the numbers is: " + total);
     }
+
+    //TC13_verify_product_quantity_in_cart
+    @And("click view product")
+    public void clickViewProduct() {
+        element.viewProduct.click();
+    }
+
+    @And("increase quantity to {string}")
+    public void increaseQuantityTo(String str) {
+        ReusableMethods.sleep(1000);
+        element.quantitySelect.clear();
+        element.quantitySelect.sendKeys(str);
+    }
+
+    @And("click add to cart button")
+    public void clickAddToCartButton() {
+        element.addToCartButton.click();
+    }
 }

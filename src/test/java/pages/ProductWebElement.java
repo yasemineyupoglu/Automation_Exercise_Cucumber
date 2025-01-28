@@ -33,4 +33,14 @@ public class ProductWebElement {
 
     @FindBy(xpath = "//p[@class='cart_total_price']")
     public List<WebElement> totalTableSize;
+
+    //TC13_verify_product_quantity_in_cart
+    @FindBy(xpath = "(//div/ul/li/a[text()='View Product'])[1]")
+    public WebElement viewProduct;
+
+    @FindBy(xpath = "//input[@id='quantity']")
+    public WebElement quantitySelect;
+
+    @FindBy(xpath = "//button[@class='btn btn-default cart']")
+    public WebElement addToCartButton;
 }
