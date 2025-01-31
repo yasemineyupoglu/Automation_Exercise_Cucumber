@@ -153,7 +153,10 @@ public class RegisterUserSD {
 
     @Then("click create account button")
     public void clickCreateAccountButton() {
+        ReusableMethods.sleep(1000);
         element.createAccountButton.click();
+        //ReusableMethods.sleep(1000);
+        //Driver.closeDriver();
     }
 
     //TC05_register_user_with_existing_email

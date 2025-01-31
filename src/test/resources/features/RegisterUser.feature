@@ -1,9 +1,13 @@
+@register
 Feature: Register User
-  @register_user
-  Scenario Outline: TC01_register_user
+
+  Background:
     Given launch browser and navigate to url
     And click on signup login button
     And verify new user signup is visible
+
+  @register_user
+  Scenario Outline: TC01_register_user
     And enter name "<name>"
     And enter email address "<email address>"
     And click signup button
@@ -27,14 +31,11 @@ Feature: Register User
 
     Examples:
       | name    | email address        | password | first name | last name | company | address | address2 | state  | city   | zipcode | mobile number |
-      | Yasemin | testy006@hotmail.com | test1234 | Yasemin    | Eyupoglu  | ABC     | Ankara  | Ankara   | Turkey | Ankara | 06000   | 05000000000   |
+      | Yasemin | testy006@hotmail.com | test1234 | Yasemin    | Test      | ABC     | Ankara  | Ankara   | Turkey | Ankara | 06000   | 05000000000   |
 
 
-    @existing_register_email
+  @existing_register_email
     Scenario Outline: TC05_register_user_with_existing_email
-      Given launch browser and navigate to url
-      And click on signup login button
-      And verify new user signup is visible
       And enter name "<name>"
       And enter email address "<email address>"
       And click signup button

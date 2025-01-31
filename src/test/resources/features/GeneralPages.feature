@@ -1,8 +1,11 @@
+@general_pages
 Feature: General Pages
+
+  Background:
+    Given launch browser and navigate to url
 
   @contact_us_pages
   Scenario Outline: TC06_contact_us_pages
-    Given launch browser and navigate to url
     And click on contact us button
     And verify get in touch is visible
     And enter contact name "<contact name>"
@@ -21,21 +24,18 @@ Feature: General Pages
 
   @test_cases_pages
   Scenario: TC07_verify_test_cases_page
-    Given launch browser and navigate to url
     And click on test cases button
     Then verify test cases is visible
 
 
   @products_pages
   Scenario: TC08_verify_products_page
-    Given launch browser and navigate to url
     And click on products button
     Then verify products is visible
 
 
   @search_products_pages
   Scenario Outline: TC09_verify_search_products_page
-    Given launch browser and navigate to url
     And click on products button
     And verify products is visible
     And enter "<product name>" in search input and click search button
@@ -49,7 +49,6 @@ Feature: General Pages
 
   @subscription_in_home_page
   Scenario Outline: TC10_verify_subscription_in_home_page
-    Given launch browser and navigate to url
     And scroll down to footer
     And verify text subscription
     And enter "<email address>" in input and click arrow button
@@ -62,7 +61,6 @@ Feature: General Pages
 
   @subscription_in_cart_page
   Scenario Outline: TC11_verify_subscription_in_cart_page
-    Given launch browser and navigate to url
     And click cart button
     And scroll down to footer
     And verify text subscription

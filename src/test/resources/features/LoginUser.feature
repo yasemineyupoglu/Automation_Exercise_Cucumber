@@ -1,10 +1,13 @@
+@login_user
 Feature: Login User
 
-  @correct_login_user
-  Scenario Outline: TC02_correct_login_user
+  Background:
     Given launch browser and navigate to url
     And click on signup login button
     And verify login to your account is visible
+
+  @correct_login_user
+  Scenario Outline: TC02_correct_login_user
     And enter login email address "<login email address>"
     And enter login password "<login password>"
     And click login button
@@ -17,9 +20,6 @@ Feature: Login User
 
   @incorrect_login_user
  Scenario Outline: TC03_incorrect_login_user
-   Given launch browser and navigate to url
-   And click on signup login button
-   And verify login to your account is visible
    And enter login email address "<login email address>"
    And enter login password "<login password>"
    And click login button
@@ -32,13 +32,10 @@ Feature: Login User
 
   @logout_user
  Scenario Outline: TC04_logout_user
-   Given launch browser and navigate to url
-   And click on signup login button
-   And verify login to your account is visible
    And enter login email address "<login email address>"
    And enter login password "<login password>"
    And click login button
-   And verify that logged in as username is visible
+   And verify that logged in as username is for logout visible
    Then click logout button
 
    Examples:

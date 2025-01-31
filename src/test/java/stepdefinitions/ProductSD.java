@@ -3,8 +3,10 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import pages.ProductWebElement;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.util.List;
@@ -19,6 +21,9 @@ public class ProductSD {
     @Given("hover over first product and click add to cart")
     public void hoverOverFirstProductAndClickAddToCart() {
         ReusableMethods.sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
+        js.executeScript("window.scrollBy(0, 400);");
         element.firstProductAddToCart.click();
     }
 

@@ -3,6 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import pages.LoginWebElement;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class LoginUserSD {
@@ -47,6 +48,7 @@ public class LoginUserSD {
         else {
             System.out.println("The account was not successfully logged in");
         }
+        //Driver.closeDriver();
     }
 
     //TC03_incorrect_login_user
@@ -60,9 +62,21 @@ public class LoginUserSD {
         else {
             System.out.println("Your email or password is correct!");
         }
+        Driver.closeDriver();
     }
 
     //TC04_logout_user
+    @And("verify that logged in as username is for logout visible")
+    public void verifyThatLoggedInAsUsernameIsForLogoutVisible() {
+        ReusableMethods.sleep(1000);
+
+        if(element.accountLoginText.isDisplayed()){
+            System.out.println("Successfully logged into account");
+        }
+        else {
+            System.out.println("The account was not successfully logged in");
+        }
+    }
     @Then("click logout button")
     public void clickLogoutButton() {
         element.logoutButton.click();
