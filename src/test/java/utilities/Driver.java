@@ -22,18 +22,22 @@ public class Driver {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
+                    driver.manage().window().maximize();
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
+                    driver.manage().window().maximize();
                     break;
                 case "ie":
                     WebDriverManager.iedriver().setup();
                     driver = new InternetExplorerDriver();
+                    driver.manage().window().maximize();
                     break;
                 case "safari":
                     WebDriverManager.getInstance(SafariDriver.class).setup();
                     driver = new SafariDriver();
+                    driver.manage().window().maximize();
                     break;
             }
         }
