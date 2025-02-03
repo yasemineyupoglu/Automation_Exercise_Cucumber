@@ -72,4 +72,20 @@ public class ProductWebElement {
 
     @FindBy(xpath = "//h2[text()='Men - Tshirts Products']")
     public WebElement menPageTitleVisible;
+
+    //TC19_view_cart_brand_products
+    @FindBy(xpath = "//div/h2[text()='Brands']")
+    public WebElement brandLeftSideBar;
+
+    @FindBy(xpath = "//a[@href='/brand_products/Polo']")
+    public WebElement brandOneSelect;
+
+    @FindBy(xpath = "//h2[@class = 'title text-center']")
+    public WebElement brandTitleVisible;
+
+    @FindBy(xpath = "//a[@href='/brand_products/H&M']")
+    public WebElement brandTwoSelect;
+
+    @FindBy(xpath = "//h2[text()='Brand - H&M Products']")
+    public WebElement brandTwoPageTitleVisible;
 }

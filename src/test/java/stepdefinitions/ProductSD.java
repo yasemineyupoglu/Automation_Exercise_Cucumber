@@ -122,10 +122,9 @@ public class ProductSD {
 
     @Then("verify that product is removed from the cart")
     public void verifyThatProductIsRemovedFromTheCart() {
-        if(element.cartIsEmptyText.isDisplayed()){
+        if (element.cartIsEmptyText.isDisplayed()) {
             System.out.println("Cart is empty text is visible");
-        }
-        else {
+        } else {
             System.out.println("Cart is empty text is not visible");
         }
     }
@@ -139,10 +138,9 @@ public class ProductSD {
 
         js.executeScript("window.scrollBy(0, 400);");
 
-        if(element.categoryLeftSideBar.isDisplayed()){
+        if (element.categoryLeftSideBar.isDisplayed()) {
             System.out.println("Categories are visible");
-        }
-        else {
+        } else {
             System.out.println("Categories are not visible");
         }
     }
@@ -162,10 +160,9 @@ public class ProductSD {
     public void verifyThatCategoryPageIsDisplayedAndConfirmTextWomenTopsProducts() {
         ReusableMethods.sleep(1000);
 
-        if(element.categoryTitleVisible.isDisplayed()){
+        if (element.categoryTitleVisible.isDisplayed()) {
             System.out.println("Category title is visible");
-        }
-        else {
+        } else {
             System.out.println("Category title is not visible");
         }
     }
@@ -182,12 +179,63 @@ public class ProductSD {
     public void verifyThatUserIsNavigatedToThatCategoryPage() {
         ReusableMethods.sleep(1000);
 
-        if(element.menPageTitleVisible.isDisplayed()){
+        if (element.menPageTitleVisible.isDisplayed()) {
             System.out.println("Men page is visible");
-        }
-        else {
+        } else {
             System.out.println("Men page is not visible");
         }
     }
 
+    //TC19_view_cart_brand_products
+    @And("verify that brand are visible on left side bar")
+    public void verifyThatBrandAreVisibleOnLeftSideBar() {
+        ReusableMethods.sleep(1000);
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
+        js.executeScript("window.scrollBy(0, 400);");
+
+        if (element.brandLeftSideBar.isDisplayed()) {
+            System.out.println("Brands are visible");
+        } else {
+            System.out.println("Brands are not visible");
+        }
+    }
+
+    @And("click on any brand name")
+    public void clickOnAnyBrandName() {
+        element.brandOneSelect.click();
+    }
+
+    @And("verify that user is navigated to brand page and brand products are displayed")
+    public void verifyThatUserIsNavigatedToBrandPageAndBrandProductsAreDisplayed() {
+        ReusableMethods.sleep(1000);
+
+        if (element.brandTitleVisible.isDisplayed()) {
+            System.out.println("Brand title is visible");
+        } else {
+            System.out.println("Brand title is not visible");
+        }
+    }
+
+    @And("on left side bar, click on any other brand link")
+    public void onLeftSideBarClickOnAnyOtherBrandLink() {
+        ReusableMethods.sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
+        js.executeScript("window.scrollBy(0, 350);");
+
+        element.brandTwoSelect.click();
+    }
+
+    @Then("verify that user is navigated to that brand page and can see products")
+    public void verifyThatUserIsNavigatedToThatBrandPageAndCanSeeProducts() {
+        ReusableMethods.sleep(1000);
+
+        if (element.brandTwoPageTitleVisible.isDisplayed()) {
+            System.out.println("Brand page is visible");
+        } else {
+            System.out.println("Brand page is not visible");
+        }
+    }
 }
