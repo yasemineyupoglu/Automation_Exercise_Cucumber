@@ -107,4 +107,14 @@ public class ProductWebElement {
 
     @FindBy(xpath = "//span[text()='Thank you for your review.']")
     public WebElement successReviewText;
+
+    //TC22_add_to_cart_from_recommended_items
+    @FindBy(xpath = "//h2[text()='recommended items']")
+    public WebElement recommendedItemsText;
+
+    @FindBy(xpath = "//div[@class='carousel-inner']//a[@data-product-id='5']")
+    public WebElement recommendedItemsOneAddToCart;
+
+    @FindBy(xpath = "//a/u[text()='View Cart']")
+    public WebElement recommendedItemsviewCart;
 }

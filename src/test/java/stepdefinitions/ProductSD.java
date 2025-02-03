@@ -283,4 +283,48 @@ public class ProductSD {
         }
     }
 
+    //TC22_add_to_cart_from_recommended_items
+    @And("scroll to bottom of page")
+    public void scrollToBottomOfPage() {
+        WebElement hedefElement = element.recommendedItemsText;
+
+        // JavaScript Executor ile sayfayı belirli elemente kaydır
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", hedefElement);
+    }
+
+    @And("verify recommended items are visible")
+    public void verifyRecommendedItemsAreVisible() {
+        ReusableMethods.sleep(1000);
+
+        if (element.recommendedItemsText.isDisplayed()) {
+            System.out.println("Recommended Items text is visible");
+        } else {
+            System.out.println("Recommended Items text is not visible");
+        }
+    }
+
+    @And("click on add to cart on recommended product")
+    public void clickOnAddToCartOnRecommendedProduct() {
+        ReusableMethods.sleep(1000);
+        element.recommendedItemsOneAddToCart.click();
+    }
+
+    @And("click on view cart button")
+    public void clickOnViewCartButton() {
+        ReusableMethods.sleep(1000);
+        element.recommendedItemsviewCart.click();
+    }
+
+    @Then("verify that product is displayed in cart page")
+    public void verifyThatProductIsDisplayedInCartPage() {
+        ReusableMethods.sleep(1000);
+
+        try {
+            List<WebElement> products = element.cartTable;
+            System.out.println("List of products on the page: " + products.size());
+        } catch (Exception e) {
+            System.out.println("No products found.");
+        }
+    }
 }

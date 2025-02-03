@@ -75,3 +75,14 @@ Feature: Product
     Examples:
       | review name | review email         | review      |
       | Test Y      | testy006@hotmail.com | Test Review |
+
+
+  @add_to_cart_from_recommended_items
+  Scenario: TC22_add_to_cart_from_recommended_items
+    And scroll to bottom of page
+    And verify recommended items are visible
+    And click on add to cart on recommended product
+    And click on view cart button
+    Then verify that product is displayed in cart page
+
+
