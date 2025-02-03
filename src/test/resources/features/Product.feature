@@ -59,3 +59,19 @@ Feature: Product
     And on left side bar, click on any other brand link
     Then verify that user is navigated to that brand page and can see products
 
+
+  @add_review_on_product
+  Scenario Outline: TC_21_add_review_on_product
+    And click on products button
+    And verify products is visible
+    And click view product
+    And verify write your reviews is visible
+    And enter review name "<review name>"
+    And enter review email "<review email>"
+    And enter review "<review>"
+    And click review submit button
+    Then verify success message thank you for your review
+
+    Examples:
+      | review name | review email         | review      |
+      | Test Y      | testy006@hotmail.com | Test Review |

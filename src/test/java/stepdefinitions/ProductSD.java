@@ -238,4 +238,49 @@ public class ProductSD {
             System.out.println("Brand page is not visible");
         }
     }
+
+    //TC_21_add_review_on_product
+    @And("verify write your reviews is visible")
+    public void verifyWriteYourReviewsIsVisible() {
+        ReusableMethods.sleep(1000);
+
+        if (element.writeYourReviewText.isDisplayed()) {
+            System.out.println("Write your review text is visible");
+        } else {
+            System.out.println("Write your review text is not visible");
+        }
+    }
+
+    @And("enter review name {string}")
+    public void enterReviewName(String str) {
+        ReusableMethods.sleep(1000);
+        element.reviewName.sendKeys(str);
+    }
+
+    @And("enter review email {string}")
+    public void enterReviewEmail(String str) {
+        element.reviewEmail.sendKeys(str);
+    }
+
+    @And("enter review {string}")
+    public void enterReview(String str) {
+        element.reviewTextArea.sendKeys(str);
+    }
+
+    @And("click review submit button")
+    public void clickReviewSubmitButton() {
+        element.submitButton.click();
+    }
+
+    @Then("verify success message thank you for your review")
+    public void verifySuccessMessageThankYouForYourReview() {
+        ReusableMethods.sleep(1000);
+
+        if (element.successReviewText.isDisplayed()) {
+            System.out.println("Thank you for your review text is visible");
+        } else {
+            System.out.println("Thank you for your review text is not visible");
+        }
+    }
+
 }

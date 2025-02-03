@@ -88,4 +88,23 @@ public class ProductWebElement {
 
     @FindBy(xpath = "//h2[text()='Brand - H&M Products']")
     public WebElement brandTwoPageTitleVisible;
+
+    //TC_21_add_review_on_product
+    @FindBy(xpath = "//a[@href='#reviews']")
+    public WebElement writeYourReviewText;
+
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement reviewName;
+
+    @FindBy(xpath = "//input[@id='email']")
+    public WebElement reviewEmail;
+
+    @FindBy(xpath = "//textarea[@id='review']")
+    public WebElement reviewTextArea;
+
+    @FindBy(xpath = "//button[@id='button-review']")
+    public WebElement submitButton;
+
+    @FindBy(xpath = "//span[text()='Thank you for your review.']")
+    public WebElement successReviewText;
 }
