@@ -112,4 +112,82 @@ public class ProductSD {
     public void clickAddToCartButton() {
         element.addToCartButton.click();
     }
+
+    //TC17_remove_product_from_cart
+    @And("click x button corresponding to particular product")
+    public void clickXButtonCorrespondingToParticularProduct() {
+        ReusableMethods.sleep(1000);
+        element.xCloseButton.click();
+    }
+
+    @Then("verify that product is removed from the cart")
+    public void verifyThatProductIsRemovedFromTheCart() {
+        if(element.cartIsEmptyText.isDisplayed()){
+            System.out.println("Cart is empty text is visible");
+        }
+        else {
+            System.out.println("Cart is empty text is not visible");
+        }
+    }
+
+    //TC18_view_category_products
+    @And("verify that categories are visible on left side bar")
+    public void verifyThatCategoriesAreVisibleOnLeftSideBar() {
+        ReusableMethods.sleep(1000);
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
+        js.executeScript("window.scrollBy(0, 400);");
+
+        if(element.categoryLeftSideBar.isDisplayed()){
+            System.out.println("Categories are visible");
+        }
+        else {
+            System.out.println("Categories are not visible");
+        }
+    }
+
+    @And("click on women category")
+    public void clickOnWomenCategory() {
+        element.categoryWomenSelect.click();
+    }
+
+    @And("click on any category link under women category")
+    public void clickOnAnyCategoryLinkUnderWomenCategory() {
+        ReusableMethods.sleep(1000);
+        element.categoryWomenOneSelect.click();
+    }
+
+    @And("verify that category page is displayed and confirm text women tops products")
+    public void verifyThatCategoryPageIsDisplayedAndConfirmTextWomenTopsProducts() {
+        ReusableMethods.sleep(1000);
+
+        if(element.categoryTitleVisible.isDisplayed()){
+            System.out.println("Category title is visible");
+        }
+        else {
+            System.out.println("Category title is not visible");
+        }
+    }
+
+    @And("on left side bar, click on any sub-category link of men category")
+    public void onLeftSideBarClickOnAnySubCategoryLinkOfMenCategory() {
+        ReusableMethods.sleep(1000);
+        element.categoryMenSelect.click();
+        ReusableMethods.sleep(1000);
+        element.categoryMenOneSelect.click();
+    }
+
+    @Then("verify that user is navigated to that category page")
+    public void verifyThatUserIsNavigatedToThatCategoryPage() {
+        ReusableMethods.sleep(1000);
+
+        if(element.menPageTitleVisible.isDisplayed()){
+            System.out.println("Men page is visible");
+        }
+        else {
+            System.out.println("Men page is not visible");
+        }
+    }
+
 }

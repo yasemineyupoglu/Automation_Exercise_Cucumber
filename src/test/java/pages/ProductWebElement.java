@@ -43,4 +43,33 @@ public class ProductWebElement {
 
     @FindBy(xpath = "//button[@class='btn btn-default cart']")
     public WebElement addToCartButton;
+
+    //TC17_remove_product_from_cart
+    @FindBy(xpath = "//a[@class='cart_quantity_delete']")
+    public WebElement xCloseButton;
+
+    @FindBy(xpath = "//a[@class='cart_quantity_delete']")
+    public WebElement cartIsEmptyText;
+
+    //TC18_view_category_products
+    @FindBy(xpath = "//div/h2[text()='Category']")
+    public WebElement categoryLeftSideBar;
+
+    @FindBy(xpath = "//a[@href='#Women']")
+    public WebElement categoryWomenSelect;
+
+    @FindBy(xpath = "//a[@href='/category_products/1']")
+    public WebElement categoryWomenOneSelect;
+
+    @FindBy(xpath = "//h2[@class = 'title text-center']")
+    public WebElement categoryTitleVisible;
+
+    @FindBy(xpath = "//a[@href='#Men']")
+    public WebElement categoryMenSelect;
+
+    @FindBy(xpath = "//a[@href='/category_products/3']")
+    public WebElement categoryMenOneSelect;
+
+    @FindBy(xpath = "//h2[text()='Men - Tshirts Products']")
+    public WebElement menPageTitleVisible;
 }

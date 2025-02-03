@@ -28,3 +28,24 @@ Feature: Product
     Examples:
       | quantity |
       | 4        |
+
+
+  @remove_product_from_cart
+  Scenario: TC17_remove_product_from_cart
+    And click on products button
+    And hover over first product and click add to cart
+    And click view cart button
+    And verify both products are added to cart
+    And click x button corresponding to particular product
+    Then verify that product is removed from the cart
+
+
+  @view_category_products
+  Scenario: TC18_view_category_products
+    And verify that categories are visible on left side bar
+    And click on women category
+    And click on any category link under women category
+    And verify that category page is displayed and confirm text women tops products
+    And on left side bar, click on any sub-category link of men category
+    Then verify that user is navigated to that category page
+
