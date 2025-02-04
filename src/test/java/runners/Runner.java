@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "utilities.formatter.PrettyReports:target/cucumber-pretty-reports"},
         features = "src/test/resources/features", //test senaryolarının bulunduğu klasör
         glue = "stepdefinitions", //test adımlarının bulunduğu klasör
-        tags = "@download_invoice_after_purchase_order", //test senaryolarının bulunduğu tag
+        tags = "@verify_scroll_up_without_arrow_button_and_scroll_down_functionality", //test senaryolarının bulunduğu tag
         dryRun = false
 )
 

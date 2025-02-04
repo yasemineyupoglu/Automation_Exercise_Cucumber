@@ -83,4 +83,14 @@ public class GeneralPagesWebElement {
     //TC11_verify_subscription_in_cart_page
     @FindBy(xpath = "//div/div/ul/li/a[text()=' Cart']")
     public WebElement cartPage;
+
+    //TC25_verify_scroll_up_using_arrow_button_and_scroll_down_functionality
+    @FindBy(xpath = "//a[@id='scrollUp']")
+    public WebElement rightSideArrowButton;
+
+    @FindBy(xpath = "//h2[text()='Full-Fledged practice website for Automation Engineers']")
+    public WebElement fullFledgedText;
+
+    //TC26_verify_scroll_up_without_arrow_button_and_scroll_down_functionality
+
 }

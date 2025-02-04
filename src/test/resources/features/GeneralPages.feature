@@ -55,7 +55,7 @@ Feature: General Pages
     Then verify success message you have been successfully subscribed is visible
 
     Examples:
-      | email address |
+      | email address        |
       | testy006@hotmail.com |
 
 
@@ -68,6 +68,21 @@ Feature: General Pages
     Then verify success message you have been successfully subscribed is visible
 
     Examples:
-      | email address |
+      | email address        |
       | testy006@hotmail.com |
 
+
+  @verify_scroll_up_using_arrow_button_and_scroll_down_functionality
+  Scenario: TC25_verify_scroll_up_using_arrow_button_and_scroll_down_functionality
+    And scroll down to footer
+    And verify text subscription
+    And click on arrow at bottom right side to move upward
+    And verify that page is scrolled up and full fledged practice website for automation engineers text is visible on screen
+
+
+  @verify_scroll_up_without_arrow_button_and_scroll_down_functionality
+  Scenario: TC26_verify_scroll_up_without_arrow_button_and_scroll_down_functionality
+    And scroll down to footer
+    And verify text subscription
+    And scroll up page to top
+    And verify that page is scrolled up and full fledged practice website for automation engineers text is visible on screen

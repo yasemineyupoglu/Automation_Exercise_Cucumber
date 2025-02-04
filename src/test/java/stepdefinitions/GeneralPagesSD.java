@@ -191,4 +191,29 @@ public class GeneralPagesSD {
     public void clickCartButton() {
         element.cartPage.click();
     }
+
+    //TC25_verify_scroll_up_using_arrow_button_and_scroll_down_functionality
+    @And("click on arrow at bottom right side to move upward")
+    public void clickOnArrowAtBottomRightSideToMoveUpward() {
+        ReusableMethods.sleep(1000);
+        element.rightSideArrowButton.click();
+    }
+
+    @And("verify that page is scrolled up and full fledged practice website for automation engineers text is visible on screen")
+    public void verifyThatPageIsScrolledUpAndFullFledgedPracticeWebsiteForAutomationEngineersTextIsVisibleOnScreen() {
+        ReusableMethods.sleep(1000);
+
+        if (element.fullFledgedText.isDisplayed()) {
+            System.out.println("Full-Fledged practice website for Automation Engineers text is visible");
+        } else {
+            System.out.println("Full-Fledged practice website for Automation Engineers text is not visible");
+        }
+    }
+
+    //TC26_verify_scroll_up_without_arrow_button_and_scroll_down_functionality
+    @And("scroll up page to top")
+    public void scrollUpPageToTop() {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollTo(0, 0);");
+    }
 }
