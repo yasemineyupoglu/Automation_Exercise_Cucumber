@@ -50,6 +50,4 @@ public class OrderWebElement {
 
     @FindBy(xpath = "//p[text()='Congratulations! Your order has been confirmed!']")
     public WebElement placedCongratulationsText;
-
-    //TC15_place_order_register_before_checkout
 }

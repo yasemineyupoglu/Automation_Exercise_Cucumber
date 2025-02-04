@@ -86,6 +86,4 @@ public class OrderSD {
             System.out.println("Congratulations! Your order has been confirmed text is not visible");
         }
     }
-
-    //TC15_place_order_register_before_checkout
 }
